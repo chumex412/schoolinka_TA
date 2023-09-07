@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+@layer base {
+	:root {
+		--type-scale: 1;
+	}
+
+	body {
+		font-family: theme('fontFamily[work-sans]');
+	}
+
+	a {
+	}
+
+	a:hover {
+	}
+
+	body {
+		min-height: 100vh;
+	}
+
+	h1 {
+		font-size: 3.2em;
+		line-height: 1.1;
+	}
+
+	button {
+		cursor: pointer;
+		transition:
+			color 0.35s,
+			border-color 0.25s;
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root {
+			color: #213547;
+			background-color: #ffffff;
+		}
+	}
+}
+
+@layer components {
+	.container {
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+}
