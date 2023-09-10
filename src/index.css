@@ -15,7 +15,25 @@
 
 @layer base {
 	:root {
-		--type-scale: 1;
+		--type-scale: 0.8;
+		--base-text: calc(var(--type-scale) * 0.875rem);
+		--md: calc(var(--type-scale) * 1rem);
+		--lg: calc(var(--type-scale) * 1.125rem);
+		--xl: calc(var(--type-scale) * 1.25rem);
+		--xl2: calc(var(--type-scale) * 1.875rem);
+
+		--slh: 120%;
+		--llh: 150%;
+
+		--gray-50: 249 250 251;
+		--gray-100: 208 213 221;
+		--gray-200: 234 236 240;
+		--gray-300: 208 213 221;
+		--gray-500: 102 112 133;
+		--gray-600: 71 84 103;
+		--gray-700: 52 64 84;
+		--gray-900: 16 24 40;
+		--primary-color: 63 91 246;
 	}
 
 	body {
@@ -44,10 +62,15 @@
 			border-color 0.25s;
 	}
 
-	@media (prefers-color-scheme: light) {
+	@media only screen and (min-width: 768px) {
 		:root {
-			color: #213547;
-			background-color: #ffffff;
+			--type-scale: 0.9;
+		}
+	}
+
+	@media only screen and (min-width: 1140px) {
+		:root {
+			--type-scale: 1;
 		}
 	}
 }

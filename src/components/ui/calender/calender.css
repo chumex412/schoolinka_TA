@@ -1,0 +1,69 @@
+@tailwind components;
+
+@layer components {
+	.se-calender .react-calendar {
+		width: 100%;
+		padding: 1.25rem 1rem;
+		border: none;
+		border-radius: 8px;
+	}
+
+	.se-calender .react-calendar__navigation__label__labelText {
+		font-size: theme('fontSize.md');
+		color: theme('colors.gray.700');
+		font-weight: 600;
+	}
+
+	.se-calender .react-calendar__navigation__arrow {
+		font-size: theme('fontSize.base');
+		color: theme('colors.gray.700');
+		font-weight: 500;
+	}
+
+	.se-calender button.react-calendar__navigation__prev2-button,
+	.se-calender button.react-calendar__navigation__next2-button {
+		display: none;
+	}
+
+	.se-calender .react-calendar__month-view__weekdays {
+		margin-bottom: 1rem;
+	}
+
+	.se-calender .react-calendar__month-view__weekdays__weekday {
+		font-size: theme('fontSize.base');
+		color: theme('colors.gray.700');
+		font-weight: 500;
+		text-transform: capitalize;
+	}
+
+	.se-calender .react-calendar__month-view__weekdays__weekday abbr:where([title]) {
+		text-decoration: none;
+	}
+
+	.se-calender .react-calendar__tile {
+		padding: 0;
+		margin-right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.se-calender .react-calendar__tile > abbr {
+		font-size: theme('fontSize.base');
+		color: theme('colors.gray.500');
+		font-weight: 400;
+		height: 2.5rem;
+		width: 2.5rem;
+		padding: 0;
+		margin-bottom: 0.3125rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.se-calender .react-calendar__tile.react-calendar__tile--active > abbr {
+		color: #ffffff;
+		background-color: theme('colors.primary');
+		border-radius: 50%;
+	}
+}

@@ -1,0 +1,8 @@
+@tailwind components;
+
+@layer components {
+	.todo-item {
+		grid-template-columns: auto 1fr auto;
+		column-gap: 0.75rem;
+	}
+}

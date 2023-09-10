@@ -2,9 +2,9 @@ import { InstructionPropTypes } from '../../../application/domain/entities/ui';
 
 const Instruction = ({ title, message }: InstructionPropTypes) => {
 	return (
-		<section>
-			<h1 className="font-semibold">{title}</h1>
-			<p>{message}</p>
+		<section className="">
+			<h1 className="text-2xl font-semibold leading-sm">{title}</h1>
+			<p className="text-base leading-lg">{message}</p>
 		</section>
 	);
 };

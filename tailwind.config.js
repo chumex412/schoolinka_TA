@@ -27,6 +27,30 @@ export default {
 		},
 		fontFamily: {
 			'work-sans': ['Work Sans Variable', 'sans-serif']
+		},
+		fontSize: {
+			base: 'var(--base-text)',
+			md: 'var(--md)',
+			lg: 'var(--lg)',
+			xl: 'var(--xl)',
+			'2xl': 'var(--xl2)'
+		},
+		lineHeight: {
+			lg: 'var(--llh)',
+			sm: 'var(--slh)'
+		},
+		colors: {
+			gray: {
+				50: 'rgb(var(--gray-50) / 1)',
+				100: 'rgb(var(--gray-100) / 1)',
+				200: 'rgb(var(--gray-200) / 1)',
+				300: 'rgb(var(--gray-300) / 1)',
+				500: 'rgb(var(--gray-500) / 1)',
+				600: 'rgb(var(--gray-600) / 1)',
+				700: 'rgb(var(--gray-700) / 1)',
+				900: 'rgb(var(--gray-900) / 1)'
+			},
+			primary: 'rgb(var(--primary-color) / 1)'
 		}
 	},
 	plugins: []
