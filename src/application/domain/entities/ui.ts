@@ -10,12 +10,15 @@ export type WeekdayCardPropType = {
 };
 
 export type TodoItemPropType = {
+	id?: string | number;
 	name: string;
-	endTime: string | number | Date;
-	startTime: string | number | Date;
-	day: string;
-	completed: boolean;
-	handleCompletedTodo: () => void;
+	endTime?: string | number | Date;
+	startTime?: string | number | Date;
+	day?: string | number | Date;
+	completed?: boolean;
+	selected: boolean;
+	handleSelected: (id: string | number) => void;
+	handleCompletedTodo: (id: string | number, completed: boolean) => void;
 };
 
 export type TimeCustomInputPropType<T> = {
@@ -24,9 +27,14 @@ export type TimeCustomInputPropType<T> = {
 	onClick?: () => void;
 };
 
+export type EntryLabel = 'startTime' | 'endTime' | '';
+
 export type TimePickerPropType<T> = {
 	Icon: T;
+	label?: EntryLabel;
+	minDate?: Date | null;
 	defaultValue: Date | null;
+	onChange: (timeValue: Date, label: EntryLabel) => void;
 };
 
 export type ButtonPropTypes<T> = {
@@ -37,7 +45,11 @@ export type ButtonPropTypes<T> = {
 };
 
 export type CalendarPropType = {
-	value: Date;
-	updateState?: () => void;
+	value: CalendarDateValue;
+	updateState?: (value: CalendarDateValue) => void;
 	customClass?: string;
 };
+
+export type CalendarDateValuePiece = Date | null;
+
+export type CalendarDateValue = CalendarDateValuePiece | [CalendarDateValuePiece, CalendarDateValuePiece];

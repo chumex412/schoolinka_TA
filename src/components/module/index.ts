@@ -1,5 +1,7 @@
+import SelectedEntry from './selected-entry';
 import TaskBoard from './task-board';
 import TodoEntry from './todo-entry';
-import TaskList from './todo-list';
+import WeekDayBoard from './weekday-board';
 
-export { TaskBoard, TaskList, TodoEntry };
+export { SelectedEntry, TaskBoard, TodoEntry, WeekDayBoard };
+export { default as TaskList } from './todo-list';

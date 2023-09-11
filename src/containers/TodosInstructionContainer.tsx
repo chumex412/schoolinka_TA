@@ -11,14 +11,16 @@ const TodosInstructionContainer = () => {
 	};
 
 	return (
-		<section className=" container mt-12 flex items-center justify-between">
+		<section className=" container mt-12 flex flex-col justify-between gap-y-4 sm:flex-row sm:items-center">
 			<Instruction title="Good morning!" message="You got some task to do. " />
-			<PrimaryButton
-				Icon={PlusIcon}
-				onClick={showCreateTodoFormHandler}
-				title="Create New Task"
-				customClass="bg-primary border-primary text-[#ffffff]"
-			/>
+			<div>
+				<PrimaryButton
+					Icon={PlusIcon}
+					onClick={showCreateTodoFormHandler}
+					title="Create New Task"
+					customClass="bg-primary border-primary text-[#ffffff]"
+				/>
+			</div>
 		</section>
 	);
 };

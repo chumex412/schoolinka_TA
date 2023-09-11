@@ -12,19 +12,19 @@ const todoReducer = (state: TodoType[], action: TodoActionType) => {
 	}
 
 	if (action.type === EDIT_TODO) {
-		return [...state, action.payload];
+		return updateTodos(state, 'edit', '', action.payload);
 	}
 
 	if (action.type === COMPLETE_TODO) {
-		return updateTodos(state, action.payload.id, 'mark');
+		return updateTodos(state, 'mark', '', action.payload);
 	}
 
 	if (action.type === UNMARK_TODO) {
-		return updateTodos(state, action.payload.id, 'unmark');
+		return updateTodos(state, 'unmark', '', action.payload);
 	}
 
 	if (action.type === REMOVE_TODO) {
-		return updateTodos(state, action.payload.id, 'remove');
+		return updateTodos(state, 'remove', action.payload.id);
 	}
 
 	return state;

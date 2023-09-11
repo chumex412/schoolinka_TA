@@ -6,17 +6,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const TimePicker = ({
 	Icon,
-	defaultValue
+	label,
+	minDate,
+	defaultValue,
+	onChange
 }: TimePickerPropType<FC<SVGProps<SVGSVGElement> & { title?: string | undefined }>>) => {
 	const [selectedTime, setSelectedTime] = useState<Date | null>(defaultValue);
 
 	const selectedTimeHandler = (date: Date) => {
 		setSelectedTime(date);
+		if (label) onChange(date, label);
 	};
-
-	const today = new Date();
-	const newDate = new Date(today);
-	const minDate = new Date(newDate.setDate(newDate.getDate() - 1));
 
 	return (
 		<DatePicker

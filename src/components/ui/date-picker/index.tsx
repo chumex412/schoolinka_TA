@@ -5,12 +5,15 @@ import { TimePickerPropType } from '../../../application/domain/entities/ui';
 
 const CustomDatePicker = ({
 	Icon,
-	defaultValue
+	defaultValue,
+	onChange
 }: TimePickerPropType<FC<SVGProps<SVGSVGElement> & { title?: string | undefined }>>) => {
 	const [selectedDate, setSelectedDate] = useState<Date | null>(defaultValue);
 
 	const selectedDateHandler = (date: Date) => {
 		setSelectedDate(date);
+
+		onChange(date, '');
 	};
 
 	const today = new Date();

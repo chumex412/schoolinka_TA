@@ -50,7 +50,8 @@ export default {
 				700: 'rgb(var(--gray-700) / 1)',
 				900: 'rgb(var(--gray-900) / 1)'
 			},
-			primary: 'rgb(var(--primary-color) / 1)'
+			primary: 'rgb(var(--primary-color) / 1)',
+			dark: 'rgb(var(--dark-color) / 1)'
 		}
 	},
 	plugins: []

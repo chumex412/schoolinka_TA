@@ -2,6 +2,7 @@ import { useContext, useReducer, createContext, ReactNode, useEffect, useMemo, D
 import { TodoActionType, TodoContextValueType, TodoType } from '../domain/entities/todo';
 import { getTodos } from '../services/todo';
 import todoReducer from '../reducers/todoReducer';
+import { ADD_ALL } from '../reducers/types';
 
 const TodoContext = createContext<TodoContextValueType<Dispatch<TodoActionType>>>({
 	todoState: [],
@@ -15,7 +16,7 @@ export const TodoContextProvider = ({ children }: { children: ReactNode }) => {
 		(async function () {
 			const allTodos: TodoType[] = await getTodos();
 
-			todoDispatch({ type: 'todo/all', payload: allTodos });
+			todoDispatch({ type: ADD_ALL, payload: allTodos || [] });
 		})();
 	}, []);
 
