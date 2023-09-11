@@ -3,12 +3,12 @@ import { TodoEntryActionType, TodoEntryType } from '../domain/entities/todo';
 import todoEntryReducer from '../reducers/todoEntryReducer';
 
 const TodoPhaseContext = createContext<TodoEntryType<Dispatch<TodoEntryActionType>>>({
-	phaseState: { entry: 'calendar', id: '' },
+	phaseState: { entry: 'calendar', id: '', date: '' },
 	phaseDispatch: () => {}
 });
 
 export const TodoPhaseContextProvider = ({ children }: { children: ReactNode }) => {
-	const [phaseState, phaseDispatch] = useReducer(todoEntryReducer, { entry: 'calendar', id: '' });
+	const [phaseState, phaseDispatch] = useReducer(todoEntryReducer, { entry: 'calendar', id: '', date: '' });
 
 	const phaseContextValue = useMemo(() => ({ phaseState, phaseDispatch }), [phaseState, phaseDispatch]);
 
