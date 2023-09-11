@@ -3,7 +3,7 @@ import { EntriesType, TodoType } from '../domain/entities/todo';
 const BASE_URL = 'https://jsonplaceholder.typicode.com/todos';
 
 export const getTodos = async (): Promise<TodoType[]> => {
-	const res = await fetch(BASE_URL + '?userId=1');
+	const res = await fetch(BASE_URL);
 
 	const data = (await res.json()) as TodoType[];
 
